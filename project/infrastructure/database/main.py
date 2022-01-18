@@ -8,7 +8,7 @@ user = os.getenv("POSTGRES_USER", "root")
 password = os.getenv("POSTGRES_PASSWORD", "root")
 db_name = os.getenv("POSTGRES_DB", "budget_db")
 
-engine = db.create_engine(f'postgresql://{user}:{password}@postgres:5432/{db_name}')
+engine = db.create_engine(f'postgresql://{user}:{password}@db:5432/{db_name}')
 
 Session = sessionmaker(bind = engine)
 Base = declarative_base()
