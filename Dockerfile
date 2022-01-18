@@ -14,6 +14,6 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY app.py app.py
-# COPY Project/ Project/
+COPY project/ project/
 
 CMD gunicorn app:app --bind 0.0.0.0:8000
