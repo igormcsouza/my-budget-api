@@ -3,7 +3,7 @@ from sqlalchemy import Column, Float, Integer, String, ForeignKey
 
 
 class Account(Base):
-    __tablebame__ = 'Account'
+    __tablename__ = 'Account'
 
     id = Column(Integer, primary_key = True)
     name = Column(String[70], nullable = False)
@@ -17,3 +17,4 @@ class Account(Base):
             "starting_balance": self.starting_balance,
             "id_user": self.id_user
         }
+        

@@ -1,10 +1,9 @@
-from tkinter.font import BOLD
 from project.infrastructure.database.main import Base
 from sqlalchemy import Column, Float, ForeignKey, Integer, Boolean, Date, String
 
 
-class Account(Base):
-    __tablebame__ = 'Transactions'
+class Transactions(Base):
+    __tablename__ = 'Transactions'
 
     id = Column(Integer, primary_key = True)
     value = Column(Float, nullable = False)
@@ -13,7 +12,7 @@ class Account(Base):
     details = Column(String[200], nullable = False)
     priority = Column(Boolean, nullable = False)
     id_installments = Column(Integer, ForeignKey("Installments.id"), nullable = False)
-    id_kind = Column(Integer, ForeignKey("KInd.id"), nullable = False)
+    id_kind = Column(Integer, ForeignKey("Kind.id"), nullable = False)
     id_user = Column(Integer, ForeignKey("User.id"), nullable = False)
 
     def to_dict(self):
@@ -28,3 +27,4 @@ class Account(Base):
             "id_kind": self.kind,
             "id_user": self.id_user
         }
+        

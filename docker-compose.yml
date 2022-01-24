@@ -9,7 +9,7 @@ services:
       - ./project:/home/user/project
       - ./app.py:/home/user/app.py
     ports:
-      - 8000:8000
+      - "8000:8000"
     depends_on:
       - db
 
@@ -19,7 +19,5 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=budget_db
-    volumes:
-      - ./data/postgres:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - "5432:5432"

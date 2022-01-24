@@ -3,8 +3,8 @@ from project.infrastructure.database.main import Base
 from sqlalchemy import Column, Integer, String
 
 
-class Account(Base):
-    __tablebame__ = 'User'
+class User(Base):
+    __tablename__ = 'User'
 
     id = Column(Integer, primary_key = True)
     username = Column(String[10], nullable = False)
@@ -15,6 +15,5 @@ class Account(Base):
         return {
             "id": self.id,
             "username": self.username,
-            "email": self.email,
-            "password": self.password
+            "email": self.email
         }
