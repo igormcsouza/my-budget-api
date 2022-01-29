@@ -17,4 +17,3 @@ class Account(Base):
             "starting_balance": self.starting_balance,
             "id_user": self.id_user
         }
-        
