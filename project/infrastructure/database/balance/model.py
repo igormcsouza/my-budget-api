@@ -16,4 +16,3 @@ class Balance(Base):
             "id_transaction": self.id_transaction,
             "id_account": self.id_account
         }
-        
