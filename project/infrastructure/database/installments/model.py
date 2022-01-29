@@ -18,4 +18,3 @@ class Installments(Base):
             "data_started": self.data_started,
             "date_to_be_finished": self.date_to_be_finished
         }
-        
