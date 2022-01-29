@@ -27,4 +27,3 @@ class Transactions(Base):
             "id_kind": self.kind,
             "id_user": self.id_user
         }
-        
