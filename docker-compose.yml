@@ -2,18 +2,22 @@ version: '3.8'
 
 services:
   web:
-    build:
-      context: .
+    build: .
     env_file:
-      - .env
+      - ./.env
+    volumes:
+      - ./project:/home/user/project
+      - ./app.py:/home/user/app.py
     ports:
-      - 8000:8000
+      - "8000:8000"
+    depends_on:
+      - db
 
   db:
     image: postgres:9.6
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: test_db
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=budget_db
     ports:
-      - 5432:5432
+      - "5432:5432"
